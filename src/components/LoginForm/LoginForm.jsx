@@ -1,16 +1,11 @@
-// RegisterForm.jsx
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
-import css from "./RegisterForm.module.css";
+import css from "./LoginForm.module.css";
 import { useDispatch } from "react-redux";
-import { register } from "../redux/auth/operations";
+import { logIn } from "../redux/auth/operations";
 
-const RegisterSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, "Too short!")
-    .max(15, "Too long!")
-    .required("Required"),
+const LoginSchema = Yup.object().shape({
   email: Yup.string()
     .email()
     .min(3, "Too short!")
@@ -25,13 +20,11 @@ const RegisterSchema = Yup.object().shape({
     .required("Required"),
 });
 const initialValues = {
-  name: "",
   email: "",
   password: "",
 };
 
-export const RegisterForm = () => {
-  const nameFieldId = useId();
+export const LoginForm = () => {
   const emailFieldId = useId();
   const passwordFieldId = useId();
 
@@ -39,8 +32,7 @@ export const RegisterForm = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     dispatch(
-      register({
-        name: values.name,
+      logIn({
         email: values.email,
         password: values.password,
       })
@@ -52,13 +44,9 @@ export const RegisterForm = () => {
     <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
-      validationSchema={RegisterSchema}
+      validationSchema={LoginSchema}
     >
       <Form className={css.form}>
-        <label htmlFor={nameFieldId}>Username</label>
-        <Field type="text" name="name" id={nameFieldId} />
-        <ErrorMessage className={css.error} name="name" component="span" />
-
         <label htmlFor={emailFieldId}>Email</label>
         <Field type="text" name="email" id={emailFieldId} />
         <ErrorMessage className={css.error} name="email" component="span" />
@@ -68,7 +56,7 @@ export const RegisterForm = () => {
         <ErrorMessage className={css.error} name="password" component="span" />
 
         <button className={css.button} type="submit">
-          Register
+          Log In
         </button>
       </Form>
     </Formik>

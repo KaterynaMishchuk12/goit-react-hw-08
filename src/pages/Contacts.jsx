@@ -3,6 +3,7 @@ import { selectLoading } from "../components/redux/selectors";
 import { useEffect } from "react";
 import { fetchContacts } from "../components/redux/operations";
 import { ContactList } from "../components/ContactList/ContactList";
+import DocumentTitle from "../components/DocumentTitle/DocumentTitle";
 
 export default function Contatcs() {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export default function Contatcs() {
 
   return (
     <div>
-      <title>Your Contacts</title>
+      <DocumentTitle>My Contacts</DocumentTitle>
       {loading && "Request is in progress...."}
       <ContactList />
     </div>

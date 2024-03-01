@@ -1,8 +1,9 @@
+// App.jsx
 import { useDispatch } from "react-redux";
 import { useEffect, lazy } from "react";
 import { refreshUser } from "./redux/auth/operations";
 import { useAuth } from "../hooks/useAuth";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { Layout } from "./Layout";
 import { RestrictedRoute } from "./RestrictedRoute";
 import { PrivateRoute } from "./PrivateRoute";
@@ -48,22 +49,8 @@ export function App() {
           }
         />
       </Route>
+      {/* If 404 - Page Not Found */}
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
-
-    // <>
-    //   <div>
-    //     <h1>Phonebook</h1>
-    //     <ContactForm />
-    //     {contacts.length < 1 ? (
-    //       ""
-    //     ) : (
-    //       <>
-    //         <SearchBox />
-    //         <ContactList />
-    //       </>
-    //     )}
-    //     {loading && !error && <p>Loading...</p>}
-    //   </div>
-    // </>
   );
 }
