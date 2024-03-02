@@ -11,7 +11,6 @@ export const selectFilteredContacts = createSelector(
   [selectContact, selectFilter],
 
   (contacts, filter) => {
-    console.log("Filter:", filter);
     if (!filter?.name) {
       return contacts;
     }

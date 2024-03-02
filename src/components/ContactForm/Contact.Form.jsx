@@ -1,5 +1,7 @@
+// ContactForm.jsx
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import { useId } from "react";
+import { nanoid } from "nanoid";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -35,7 +37,8 @@ export const ContactForm = () => {
     if (alreadyExists) {
       alert(`${name} already exists!`);
     } else {
-      dispatch(addContact({ name, phone: number }));
+      dispatch(addContact({ id: nanoid(), name, number }));
+      console.log(values.number);
       resetForm();
     }
   };
