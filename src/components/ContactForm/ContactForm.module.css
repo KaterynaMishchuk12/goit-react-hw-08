@@ -1,17 +1,22 @@
 .form {
+  margin-left: 32px;
+  margin-top: 58px;
   font-size: 18px;
   display: flex;
   flex-direction: column;
   padding: 6px 12px;
   gap: 8px;
   align-items: flex-start;
-  border: 2px solid black;
+  border: 1px solid darkblue;
   border-radius: 8px;
+  width: 300px;
+  height: 200px;
 }
 .form input {
   border: 1px solid rgb(14, 2, 57);
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: 8px 8px;
+  outline: none;
 }
 
 .error {
@@ -25,7 +30,7 @@
   font-size: 16px;
   margin-top: 12px;
   margin-bottom: 8px;
-  background-color: rgb(210, 225, 225);
+  background-color: rgb(217, 249, 238);
   border-radius: 4px;
   cursor: pointer;
 }

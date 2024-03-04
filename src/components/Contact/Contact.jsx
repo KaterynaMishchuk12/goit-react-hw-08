@@ -13,7 +13,7 @@ export const Contact = ({ name, number, id }) => {
     <li key={id}>
       <div className={css.container}>
         <div className={css.contactInfo}>
-          <p>
+          <p className={css.p}>
             <BiSolidUser className={css.icon} />
             {name}
           </p>
@@ -22,10 +22,10 @@ export const Contact = ({ name, number, id }) => {
             {number}
           </p>
         </div>
-        <AiFillDelete onClick={() => handleDeleteContact(id)} />
-        {/* <button type="button" onClick={() => handleDeleteContact(id)}>
-          Delete
-        </button> */}
+        <AiFillDelete
+          style={{ size: "18px", color: "darkblue", cursor: "pointer" }}
+          onClick={() => handleDeleteContact(id)}
+        />
       </div>
     </li>
   );

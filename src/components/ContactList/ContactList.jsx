@@ -2,17 +2,13 @@ import { Contact } from "../Contact/Contact";
 import { useSelector } from "react-redux";
 import { selectFilteredContacts } from "../redux/selectors";
 import css from "./ContactList.module.css";
+import { SearchBox } from "../SearchBox/SearchBox";
 
 export const ContactList = () => {
   const contacts = useSelector(selectFilteredContacts);
-  // const filter = useSelector(selectFilter);
-
-  // const searchedContacts = contacts.filter((contact) =>
-  //   contact.name.toLowerCase().includes(filter.toLowerCase())
-  // );
 
   return (
-    <div>
+    <div className={css.listContainer}>
       <ul className={css.list}>
         {contacts.map((contact) => (
           <Contact
@@ -23,6 +19,7 @@ export const ContactList = () => {
           />
         ))}
       </ul>
+      <SearchBox />
     </div>
   );
 };

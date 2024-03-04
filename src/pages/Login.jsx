@@ -1,5 +1,5 @@
 import { LoginForm } from "../components/LoginForm/LoginForm";
-import DocumentTitle from "../components/DocumentTitle/DocumentTitle";
+import { DocumentTitle } from "../components/DocumentTitle/DocumentTitle";
 
 export default function Login() {
   return (

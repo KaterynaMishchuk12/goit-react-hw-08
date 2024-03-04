@@ -5,6 +5,7 @@ import * as Yup from "yup";
 import css from "./RegisterForm.module.css";
 import { useDispatch } from "react-redux";
 import { register } from "../redux/auth/operations";
+import toast from "react-hot-toast";
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,9 +20,7 @@ const RegisterSchema = Yup.object().shape({
   password: Yup.string()
     .min(3, "Too short!")
     .max(30, "Too long!")
-    // .matches(/[a-zA-Z]/, "Password can only contain Latin letters.")
-    // .minSymbols(1, "password must contain at least 1 special symbol")
-    // .minNumbers(1, "password must contain at least 1 number")
+
     .required("Required"),
 });
 const initialValues = {
@@ -44,8 +43,15 @@ export const RegisterForm = () => {
         email: values.email,
         password: values.password,
       })
-    );
-    resetForm();
+    )
+      .unwrap()
+      .then(() => {
+        toast.success("Congratulations! Successfull registration!");
+        resetForm();
+      })
+      .catch(() => {
+        toast.error("Such user already exists");
+      });
   };
 
   return (

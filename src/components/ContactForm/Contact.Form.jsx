@@ -38,7 +38,7 @@ export const ContactForm = () => {
       alert(`${name} already exists!`);
     } else {
       dispatch(addContact({ id: nanoid(), name, number }));
-      console.log(values.number);
+
       resetForm();
     }
   };

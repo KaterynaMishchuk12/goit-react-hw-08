@@ -1,19 +1,21 @@
 .container {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
-  gap: 12px;
+  gap: 32px;
+  margin-right: 28px;
 }
 .text {
   font-size: 28px;
 }
 .button {
-  border-radius: 4px;
-  background-color: rgb(217, 249, 238);
+  border: none;
+  background-color: transparent;
+
   cursor: pointer;
 }
 .button:hover,
 button:focus {
-  background-color: rgb(127, 248, 248);
   transform: scale(1.2);
+  color: darkblue;
 }

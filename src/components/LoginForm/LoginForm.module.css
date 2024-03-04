@@ -2,14 +2,15 @@
   font-size: 18px;
   display: flex;
   flex-direction: column;
-  padding: 6px 12px;
+
+  padding: 8px 32px;
   gap: 8px;
   align-items: flex-start;
 }
 .form input {
   border: 1px solid rgb(14, 2, 57);
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: 8px 8px;
 }
 
 .error {
@@ -26,6 +27,7 @@
   background-color: rgb(210, 225, 225);
   border-radius: 4px;
   cursor: pointer;
+  padding: 6px 12px;
 }
 .button:hover {
   background-color: cadetblue;
