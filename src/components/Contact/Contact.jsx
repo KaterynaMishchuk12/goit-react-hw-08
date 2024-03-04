@@ -3,6 +3,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import css from "./Contact.module.css";
 import { deleteContact } from "../redux/operations";
 import { useDispatch } from "react-redux";
+import { AiFillDelete } from "react-icons/ai";
 
 export const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
@@ -21,9 +22,10 @@ export const Contact = ({ name, number, id }) => {
             {number}
           </p>
         </div>
-        <button type="button" onClick={() => handleDeleteContact(id)}>
+        <AiFillDelete onClick={() => handleDeleteContact(id)} />
+        {/* <button type="button" onClick={() => handleDeleteContact(id)}>
           Delete
-        </button>
+        </button> */}
       </div>
     </li>
   );

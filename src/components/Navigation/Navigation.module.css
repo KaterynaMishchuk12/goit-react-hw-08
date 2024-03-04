@@ -1,0 +1,17 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.link {
+  text-decoration: none;
+  font-size: 28px;
+  padding: 16px;
+}
+.link:hover,
+.link:focus {
+  color: darkblue;
+}
+.link.active {
+  color: blue;
+}
