@@ -1,4 +1,3 @@
-// App.jsx
 import { useDispatch } from "react-redux";
 import { useEffect, lazy } from "react";
 import { refreshUser } from "./redux/auth/operations";
